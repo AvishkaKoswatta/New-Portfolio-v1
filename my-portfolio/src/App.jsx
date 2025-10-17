@@ -238,13 +238,22 @@ const Portfolio = () => {
       </div>
 
       <div className="flex justify-center">
-        <button
+        {/* <button
           onClick={() => alert('CV download would start here.')}
           className="flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
         >
           <Download size={20} />
           <span>Download CV</span>
         </button>
+         */}
+         <a
+    href="/Avishka_Koswaththa_Resume_Data_Eng.pdf"
+    download
+    className="flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
+  >
+    <Download size={20} />
+    <span>Download CV</span>
+  </a>
       </div>
     </div>
   );
