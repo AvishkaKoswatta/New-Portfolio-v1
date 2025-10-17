@@ -168,16 +168,24 @@ const Portfolio = () => {
       <div className="flex flex-col space-y-12 px-8">
         <div className="w-full">
           <h3 className="text-xl font-semibold mb-4 text-gray-700">Background</h3>
+          <div className="border-l-4 border-blue-500 pl-4"> 
           <p className="text-gray-700 mb-4">
             I am pursuing my BScEng (Hons) in Computer Engineering with a focus on Data Engineering. 
             Through coursework, projects, and internships, I have built strong skills in data processing, 
             pipeline development, and analytics.
           </p>
+          </div>
           <h3 className="text-xl font-semibold mb-4 mt-6 text-gray-700">Education</h3>
           <div className="border-l-4 border-blue-500 pl-4">
             <h4 className="font-semibold text-gray-600">BScEng (Hons) in Computer Engineering</h4>
             <p className="text-gray-600">University of Ruhuna | Expected 2025</p>
             <p className="text-gray-600">Focus: Data Engineering & Analytics</p>
+          </div>
+          <h3 className="text-xl font-semibold mb-4 mt-6 text-gray-700">Experience</h3>
+          <div className="border-l-4 border-blue-500 pl-4">
+            <h4 className="font-semibold text-gray-600">Intern Software Engineer</h4>
+            <p className="text-gray-600">eSupport Technologies PVT(LTD)</p>
+            <p className="text-gray-600">08/2024 to 01/2025 (6 Month)</p>
           </div>
         </div>
 
@@ -271,17 +279,17 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen w-full bg-gray-50">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-10 w-full">
-        <div className="w-full px-4 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold text-gray-800">AVISHKA</div>
-          <div className="flex space-x-2 flex-wrap">
-            <NavButton section="home" label="Home" icon={Database} />
-            <NavButton section="about" label="About" icon={Users} />
-            <NavButton section="projects" label="Projects" icon={Code} />
-            <NavButton section="contact" label="Contact" icon={Mail} />
-          </div>
-        </div>
-      </nav>
+     <nav className="bg-white shadow-sm sticky top-0 z-10 w-full">
+  <div className="w-full px-4 py-4 flex justify-end items-center">
+    <div className="flex space-x-2 flex-wrap">
+      <NavButton section="home" label="Home" icon={Database} />
+      <NavButton section="about" label="About" icon={Users} />
+      <NavButton section="projects" label="Projects" icon={Code} />
+      <NavButton section="contact" label="Contact" icon={Mail} />
+    </div>
+  </div>
+</nav>
+
 
       {/* Main Content */}
       <main className="w-full">
