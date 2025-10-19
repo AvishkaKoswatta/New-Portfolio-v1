@@ -4,6 +4,7 @@ import { Download, Mail, Phone, MapPin, Github, Linkedin, Database, BarChart3, C
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const projects = [
     {
@@ -36,7 +37,7 @@ const Portfolio = () => {
     },
     {
       title: "Carbon Footprint Chatbot",
-      description: "A domain-specific chatbot leveraging Mistral Lora to respond to questions about carbon footprint.",
+      description: "Developed a domain-Specific Chatbot on Carbon Footprint with LoRA fine-tuned Mistral 7B that capable of answering related questions using a RAG pipeline. (FAISS + Hugging Face)",
       technologies: ["Python", "Advance AI"],
       status: "Completed",
       image: "chatbot.png"
@@ -138,21 +139,42 @@ const Portfolio = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <div className="text-center">
-          <BarChart3 className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          {/* <BarChart3 className="w-12 h-12 text-blue-600 mx-auto mb-4" /> */}
+                   <div className="flex items-center justify-center">
+          <img
+            src="bar.gif"
+            alt="Logo"
+            className="w-12 h-12 text-blue-600 mx-auto mb-4" 
+          />
+        </div>
           <h3 className="text-lg font-semibold mb-2">Data Analysis</h3>
           <p className="text-gray-600">
             Extract insights from datasets & ensure data quality and reliability.
           </p>
         </div>
         <div className="text-center">
-          <Code className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          {/* <Code className="w-12 h-12 text-blue-600 mx-auto mb-4" /> */}
+          <div className="flex items-center justify-center">
+          <img
+            src="code.gif"
+            alt="Logo"
+            className="w-12 h-12 text-blue-600 mx-auto mb-4" 
+          />
+        </div>
           <h3 className="text-lg font-semibold mb-2">Pipeline Development</h3>
           <p className="text-gray-600">
             Build ETL pipelines for efficient data processing and automation.
           </p>
         </div>
         <div className="text-center">
-          <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          {/* <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" /> */}
+          <div className="flex items-center justify-center">
+          <img
+            src="users.gif"
+            alt="Logo"
+            className="w-12 h-12 text-blue-600 mx-auto mb-4" 
+          />
+        </div>
           <h3 className="text-lg font-semibold mb-2">Collaboration</h3>
           <p className="text-gray-600">
             Work with cross-functional teams to deliver impactful data solutions.
@@ -279,9 +301,38 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen w-full bg-gray-50">
       {/* Navigation */}
-     <nav className="bg-white shadow-sm sticky top-0 z-10 w-full">
+     {/* Navigation */}
+<nav className="bg-white shadow-sm sticky top-0 z-10 w-full">
   <div className="w-full px-4 py-4 flex justify-end items-center">
-    <div className="flex space-x-2 flex-wrap">
+    {/* Left side (optional logo) */}
+    
+
+    {/* Hamburger icon (visible only on mobile) */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="md:hidden text-gray-700 focus:outline-none"
+    >
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+        />
+      </svg>
+    </button>
+
+    {/* Nav buttons */}
+    <div
+      className={`flex flex-col md:flex-row md:space-x-2 md:static absolute md:bg-transparent bg-white top-16 left-0 w-full md:w-auto p-4 md:p-0 shadow-md md:shadow-none transition-all duration-300 ease-in-out ${
+        menuOpen ? "block" : "hidden md:flex"
+      }`}
+    >
       <NavButton section="home" label="Home" icon={Database} />
       <NavButton section="about" label="About" icon={Users} />
       <NavButton section="projects" label="Projects" icon={Code} />
@@ -289,6 +340,7 @@ const Portfolio = () => {
     </div>
   </div>
 </nav>
+
 
 
       {/* Main Content */}
